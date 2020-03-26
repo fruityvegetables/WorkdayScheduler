@@ -18,15 +18,36 @@ $(document).ready(function() {
 
     // allows user to enter text into each "time block"
     $(".saveBtn").on("click", function (event) {
-        
+
         // check event.target FIRST on events like this ^^
         var task = event.target.previousElementSibling.value;
         var time = event.target.parentNode.innerText.trim().replace(" ", "");
 
         localStorage.setItem(time, task);
     });
+    
+    // //function to check the current time and change the color of the appropriate text areas
+    // function currentTimeCheck(){
+        
+    //     // var currBlock = $(".time-block")[0];
+    //     // currBlock.attr("class", "present");
+    //     // var time = currBlock.attr("data-time");
+    //     // console.log(time);
+        
+
+    //     // if (now != time){
+    //     //     if (now < time){
+    //     //         //then the textarea should be displayed .future
+    //     //     } else if (now > time) {
+    //     //         //then the textarea should be displayed .past
+    //     //     }
+    //     // } else {
+    //     //     //then the textarea should be displayed .present
+    //     // }
+
+    // };
 
 
-
+    // currentTimeCheck();
 });
 
