@@ -2,7 +2,7 @@
 $(document).ready(function() {
     moment().format();
     //displays the current time & date at the top.
-    var now = moment();
+    var now = moment().format("HH");
     
     $("#currentDay").text(now);
 
@@ -31,7 +31,6 @@ $(document).ready(function() {
         
     $(".time-block").each(function(){
         var time = $(this).attr("data-time");
-        
         if (now != time){
             if (now < time){
                 $(this).attr("class", "future");
