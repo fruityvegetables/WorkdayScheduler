@@ -26,28 +26,30 @@ $(document).ready(function() {
         localStorage.setItem(time, task);
     });
     
-    // //function to check the current time and change the color of the appropriate text areas
-    // function currentTimeCheck(){
+    //function to check the current time and change the color of the appropriate text areas
+    function currentTimeCheck(){
         
-    //     // var currBlock = $(".time-block")[0];
-    //     // currBlock.attr("class", "present");
-    //     // var time = currBlock.attr("data-time");
-    //     // console.log(time);
+    $(".time-block").each(function(){
+        var time = $(this).attr("data-time");
         
+        if (now != time){
+            if (now < time){
+                $(this).attr("class", "future");
+                //then the textarea should be displayed .future
+            } else if (now > time) {
+                $(this).attr("class", "past");
+                //then the textarea should be displayed .past
+            }
+        } else {
+            $(this).attr("class", "present");
+            //then the textarea should be displayed .present
+        }
+    });
 
-    //     // if (now != time){
-    //     //     if (now < time){
-    //     //         //then the textarea should be displayed .future
-    //     //     } else if (now > time) {
-    //     //         //then the textarea should be displayed .past
-    //     //     }
-    //     // } else {
-    //     //     //then the textarea should be displayed .present
-    //     // }
 
-    // };
+     };
 
 
-    // currentTimeCheck();
+    currentTimeCheck();
 });
 
