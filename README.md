@@ -7,3 +7,8 @@ The moment.js library was used to format the date and time.
 ## Commit History
 * First initial files uploaded to GitHub
 * Second commit has a script file to display the date!
+* Third commit came late, and has a lot of updates:
+* I updated the `index.html` to have many more bootstrap columns and rows.
+* Added some functionality with `jQuery & Javascript` - 
+* Displays the 9 am-5 pm hours, with a text area next to each box and a button to save.
+* ACTUALLY saves the text into the local storage!!! yayy!
