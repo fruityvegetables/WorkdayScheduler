@@ -1,8 +1,8 @@
 // the jQuery WAY is to put everything after the document.ready
 $(document).ready(function () {
-    moment().format();
+
     //displays the current time & date at the top.
-    var now = moment();
+    var now = moment().hour(16);
 
     $("#currentDay").text(now);
 
@@ -20,6 +20,7 @@ $(document).ready(function () {
     $(".saveBtn").on("click", function (event) {
 
         // check event.target FIRST on events like this ^^
+       // console.log(event);
         var task = event.target.previousElementSibling.value;
         var time = event.target.parentNode.innerText.trim().replace(" ", "");
 
@@ -30,23 +31,26 @@ $(document).ready(function () {
     function currentTimeCheck() {
 
         $(".time-block").each(function () {
+            
             var time = $(this).attr("data-time");
-            if (now != time) {
+            var now = moment().hour(16);
+
+            if (now !== time) {
                 if (now < time) {
-                    $(this).attr("class", "future");
+                    $(".description").addClass("future");
                     //then the textarea should be displayed .future
                 } else if (now > time) {
-                    $(this).attr("class", "past");
+                    $(".description").addClass("past");
                     //then the textarea should be displayed .past
                 }
             } else {
-                $(this).attr("class", "present");
+                $(".description").addClass("present");
                 //then the textarea should be displayed .present
             }
         });
 
 
-    };
+    }
 
 
     currentTimeCheck();

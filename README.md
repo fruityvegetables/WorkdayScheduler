@@ -14,3 +14,5 @@ The moment.js library was used to format the date and time.
 * ACTUALLY saves the text into the local storage!!! yayy!
 * FOURTH commits - Added some if/else statements
 * Added some variables and called to the HTML
+* Fifth commit fixed a bug
+* Sixth commit is probably my last... everything is functioning except for getting the proper color displayed.
