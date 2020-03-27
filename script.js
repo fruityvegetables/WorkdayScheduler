@@ -1,9 +1,9 @@
 // the jQuery WAY is to put everything after the document.ready
-$(document).ready(function() {
+$(document).ready(function () {
     moment().format();
     //displays the current time & date at the top.
-    var now = moment().format("HH");
-    
+    var now = moment();
+
     $("#currentDay").text(now);
 
     $("#9AM").val(localStorage.getItem("9AM"));
@@ -25,28 +25,28 @@ $(document).ready(function() {
 
         localStorage.setItem(time, task);
     });
-    
+
     //function to check the current time and change the color of the appropriate text areas
-    function currentTimeCheck(){
-        
-    $(".time-block").each(function(){
-        var time = $(this).attr("data-time");
-        if (now != time){
-            if (now < time){
-                $(this).attr("class", "future");
-                //then the textarea should be displayed .future
-            } else if (now > time) {
-                $(this).attr("class", "past");
-                //then the textarea should be displayed .past
+    function currentTimeCheck() {
+
+        $(".time-block").each(function () {
+            var time = $(this).attr("data-time");
+            if (now != time) {
+                if (now < time) {
+                    $(this).attr("class", "future");
+                    //then the textarea should be displayed .future
+                } else if (now > time) {
+                    $(this).attr("class", "past");
+                    //then the textarea should be displayed .past
+                }
+            } else {
+                $(this).attr("class", "present");
+                //then the textarea should be displayed .present
             }
-        } else {
-            $(this).attr("class", "present");
-            //then the textarea should be displayed .present
-        }
-    });
+        });
 
 
-     };
+    };
 
 
     currentTimeCheck();
