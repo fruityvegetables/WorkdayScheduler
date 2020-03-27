@@ -16,3 +16,4 @@ The moment.js library was used to format the date and time.
 * Added some variables and called to the HTML
 * Fifth commit fixed a bug
 * Sixth commit is probably my last... everything is functioning except for getting the proper color displayed.
+* Seventh commit is actually probably my last, I fixed some typos and added lots of juicy comments.

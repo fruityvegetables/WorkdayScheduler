@@ -12,7 +12,8 @@ textarea{
   border-left: 1px solid black;
   padding: 10px;
 }
-
+/* Random note, thanks Israel for explaining to me that I should work backwards from the CSS.
+  I would have been comfuzzsedddd for a long time guaranteed. */
 .jumbotron {
   text-align: center;
   background-color: transparent;
