@@ -41,25 +41,27 @@ $(document).ready(function () {
 
             // COULD NOT parse this part correctly vv
             // would REALLY LOVE if a TA could explain this to me (o:
-            var time = $(this).attr("data-time");
+            var time = parseInt($(this).attr("data-time"));
 
             // added .hour(16) because I was working on this around 8 pm; 
             //if it just so happened that I got the logic down correctly...
             // it would have displayed them all as either past or future! So I set it for 4 pm.
-            var now = moment().hour(16);
+            var now = moment().hour();
 
             // I REALLY think this logic vv is correct.
             // but the issue is just parsing that damn data-time into something moment.js can read!
-            if (now !== time) {
+
                 if (now < time) {
-                    $(".description").addClass("future");
+                    
+                    $(this).find(".description").addClass("future");
                     //then the textarea should be displayed .future
                 } else if (now > time) {
-                    $(".description").addClass("past");
+                
+                    $(this).find(".description").addClass("past");
                     //then the textarea should be displayed .past
-                }
-            } else {
-                $(".description").addClass("present");
+                } else {
+               
+                $(this).find(".description").addClass("present");
                 //then the textarea should be displayed .present
             }
         });
